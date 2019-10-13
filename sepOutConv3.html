@@ -1,0 +1,27 @@
+<head><style>button {  font-size: 30px;}p {  font-size: 30px;}</style></head>
+<button style = "background-color:90FF33; border: 2px solid black; float: right;" onclick = "playAudio3()" >Play &#9654; <i class='fas fa-volume-up'></i></button> <p > </p>;
+<p id="conv12"  dir="RTL">אני גלית.</p> 
+<p id="conv13"  dir="RTL">אני מורה ממרילנד.</p> 
+<p id="conv14"  dir="RTL"> </p> 
+<p id="conv15"  dir="RTL">מוֹרֶה ב: שָׁלוֹם!</p> 
+<p id="conv16"  dir="RTL">אֲנִי רַפִי.</p> 
+<script>
+var lineIds = [];
+var audio1 = new Audio('sepOutConv1.wav');  function playAudio1() {  audio1.play(); markLines(0,3); } 
+var audio2 = new Audio('sepOutConv2.wav');  function playAudio2() {  audio2.play(); markLines(3,12); } 
+var audio3 = new Audio('sepOutConv3.wav');  function playAudio3() {  audio3.play(); markLines(12,17); } 
+var audio4 = new Audio('sepOutConv4.wav');  function playAudio4() {  audio4.play(); markLines(17,29); } 
+var audio5 = new Audio('sepOutConv5.wav');  function playAudio5() {  audio5.play(); markLines(29,32); } 
+var audio6 = new Audio('sepOutConv6.wav');  function playAudio6() {  audio6.play(); markLines(32,34); } 
+var audio7 = new Audio('sepOutConv7.wav');  function playAudio7() {  audio7.play(); markLines(34,36); } 
+var audio8 = new Audio('sepOutConv8.wav');  function playAudio8() {  audio8.play(); markLines(36,43); } 
+var audio9 = new Audio('sepOutConv9.wav');  function playAudio9() {  audio9.play(); markLines(43,50); } 
+function markLines(minId,maxID) {   var stWordIn=[];   var endWordIn=[];   var stringIDArr=[];  var strArr=[];  
+for(var ii=minId; ii<maxID;ii++){   var stringID = "conv" + ii;  var inputElement =  document.getElementById(stringID);var innerHTML = inputElement.innerHTML;var str = innerHTML; var stSent = 0;var endSent = 0; 
+if (str.length<2){ continue; }   stWordIn.push(0);  	 stringIDArr.push(stringID);    strArr.push(str)
+for (var i = 2; i < str.length; i++)  {   if (str.charAt(i)==' '){endWordIn.push(i);stWordIn.push(i+1); stringIDArr.push(stringID); strArr.push(str);foundSpace=1; } } endWordIn.push(str.length); }
+var myVar2 = setInterval(myTimer, 1000); var ip=0;function myTimer() { if( ip == stWordIn.length+1 ){ window.clearInterval( myVar2 );}  if (ip<stWordIn.length){
+var innerHTML1 = strArr[ip].substring(0,stWordIn[ip]) + "<mark>" + strArr[ip].substring(stWordIn[ip],endWordIn[ip]) + "</mark>" + strArr[ip].substring(endWordIn[ip],strArr[ip].length);
+document.getElementById(stringIDArr[ip]).innerHTML = innerHTML1; }  if (strArr[ip-1]!==strArr[ip]&&ip>1){document.getElementById(stringIDArr[ip-1]).innerHTML = strArr[ip-1];} ip++; }} 
+function sleep(milliseconds) {var start = new Date().getTime(); for (var i = 0; i < 1e7; i++){if ((new Date().getTime() - start) > milliseconds){break;}}}
+</script>
