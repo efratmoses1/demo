@@ -1,23 +1,25 @@
 <head><style>button {  font-size: 30px;}p {  font-size: 30px;}</style></head>
 <button style = "background-color:90FF33; border: 2px solid black; float: right;" onclick = "playAudio9()" >Play &#9654; <i class='fas fa-volume-up'></i></button> <p > </p>;
-<p id="conv43"  dir="RTL">מִישֶׁל: בֹּקֶר טוֹב.</p> 
-<p id="conv44"  dir="RTL">יָעֵל: אַתְּ סְטוּדֶנְטִית?</p> 
-<p id="conv45"  dir="RTL">מִישֶׁל: כֵּן, אֲנִי סְטוּדֶנְטִית, וְאַתְּ?</p> 
-<p id="conv46"  dir="RTL">יָעֵל: אֲנִי מוֹרַה. אַתְּ סְטוּדֶנְטִית חֲדָשָׁה?</p> 
-<p id="conv47"  dir="RTL">מִישֶׁל: כֵּן, אֲנִי סְטוּדֶנְטִית חֲדָשָׁה ב- FSI</p> 
-<p id="conv48"  dir="RTL">יָעֵל: מֵאַיִן אַתְּ, יָעֵל? אַתְּ מִשִׁיקַגוֹ?</p> 
-<p id="conv49"  dir="RTL">מִישֶׁל: כֵּן, אֲנִי מִשִׁיקַגוֹ. וְאַתְּ?</p> 
+<p id="conv58"  dir="RTL">יָעֵל: בֹּקֶר טוֹב מִישֶׁל.</p> 
+<p id="conv59"  dir="RTL">מִישֶׁל: בֹּקֶר טוֹב.</p> 
+<p id="conv60"  dir="RTL">יָעֵל: אַתְּ סְטוּדֶנְטִית?</p> 
+<p id="conv61"  dir="RTL">מִישֶׁל: כֵּן, אֲנִי סְטוּדֶנְטִית, וְאַתְּ?</p> 
+<p id="conv62"  dir="RTL">יָעֵל: אֲנִי מוֹרַה. אַתְּ סְטוּדֶנְטִית חֲדָשָׁה?</p> 
+<p id="conv63"  dir="RTL">מִישֶׁל: כֵּן, אֲנִי סְטוּדֶנְטִית חֲדָשָׁה ב- FSI</p> 
+<p id="conv64"  dir="RTL">יָעֵל: מֵאַיִן אַתְּ, יָעֵל? אַתְּ מִשִׁיקַגוֹ?</p> 
+<p id="conv65"  dir="RTL">מִישֶׁל: כֵּן, אֲנִי מִשִׁיקַגוֹ. וְאַתְּ?</p> 
+<p id="conv66"  dir="RTL">יָעֵל: אֲנִי מִירוּשָׁלַיִם.</p> 
 <script>
 var lineIds = [];
-var audio1 = new Audio('sepOutConv1.wav');  function playAudio1() {  audio1.play(); markLines(0,3); } 
-var audio2 = new Audio('sepOutConv2.wav');  function playAudio2() {  audio2.play(); markLines(3,12); } 
-var audio3 = new Audio('sepOutConv3.wav');  function playAudio3() {  audio3.play(); markLines(12,17); } 
-var audio4 = new Audio('sepOutConv4.wav');  function playAudio4() {  audio4.play(); markLines(17,29); } 
-var audio5 = new Audio('sepOutConv5.wav');  function playAudio5() {  audio5.play(); markLines(29,32); } 
-var audio6 = new Audio('sepOutConv6.wav');  function playAudio6() {  audio6.play(); markLines(32,34); } 
-var audio7 = new Audio('sepOutConv7.wav');  function playAudio7() {  audio7.play(); markLines(34,36); } 
-var audio8 = new Audio('sepOutConv8.wav');  function playAudio8() {  audio8.play(); markLines(36,43); } 
-var audio9 = new Audio('sepOutConv9.wav');  function playAudio9() {  audio9.play(); markLines(43,50); } 
+var audio1 = new Audio('sepOutConv1.wav');  function playAudio1() {  audio1.play(); markLines(0,4); } 
+var audio2 = new Audio('sepOutConv2.wav');  function playAudio2() {  audio2.play(); markLines(4,15); } 
+var audio3 = new Audio('sepOutConv3.wav');  function playAudio3() {  audio3.play(); markLines(15,22); } 
+var audio4 = new Audio('sepOutConv4.wav');  function playAudio4() {  audio4.play(); markLines(22,36); } 
+var audio5 = new Audio('sepOutConv5.wav');  function playAudio5() {  audio5.play(); markLines(36,41); } 
+var audio6 = new Audio('sepOutConv6.wav');  function playAudio6() {  audio6.play(); markLines(41,45); } 
+var audio7 = new Audio('sepOutConv7.wav');  function playAudio7() {  audio7.play(); markLines(45,49); } 
+var audio8 = new Audio('sepOutConv8.wav');  function playAudio8() {  audio8.play(); markLines(49,58); } 
+var audio9 = new Audio('sepOutConv9.wav');  function playAudio9() {  audio9.play(); markLines(58,67); } 
 function markLines(minId,maxID) {   var stWordIn=[];   var endWordIn=[];   var stringIDArr=[];  var strArr=[];  
 for(var ii=minId; ii<maxID;ii++){   var stringID = "conv" + ii;  var inputElement =  document.getElementById(stringID);var innerHTML = inputElement.innerHTML;var str = innerHTML; var stSent = 0;var endSent = 0; 
 if (str.length<2){ continue; }   stWordIn.push(0);  	 stringIDArr.push(stringID);    strArr.push(str)
