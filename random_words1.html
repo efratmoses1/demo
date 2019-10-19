@@ -1,0 +1,53 @@
+<head><style>button {  font-size: 30px;}p {  font-size: 50px;}</style></head>
+<!-- <p style = "float: right;">  Random Words Quiz </p> -->
+<button style = " background - color:#90FCF3\; border: 2px solid black; float: right; margin: 5px;" onclick = "playAudio1()" >Play &#9654; <i class='fas fa-volume-up'></i></button> <p > </p>;
+<span >   </span>;
+<button style = " background - color:#90FCF3\; border: 2px solid black; float: right; margin: 5px;" onclick = "markLines()" >Check &#9654; <i class='fas fa-volume-up'></i></button> <p > </p>;
+<p id="conv0"  dir="RTL">שוקולד</p> 
+<p id="conv1"  dir="RTL">אירלנד</p> 
+<p id="conv2"  dir="RTL">לוקסמבורג</p> 
+<p id="conv3"  dir="RTL">רומא</p> 
+<p id="conv4"  dir="RTL">לינק</p> 
+<p id="conv4"  dir="RTL">דיפלומט</p> 
+<script>
+var audio1 = new Audio('randomWord1.wav');  
+var lastStringID="conv0";
+var lastinnerHTML = "";
+var lineIds = [];
+var lastii=0;
+var ii=0;
+
+function playAudio1() {
+ii=Math.floor(Math.random() * 5.99);
+//if (ii>4){ii=0 }
+audio1.currentTime=ii; 
+audio1.play(); 
+audio1.addEventListener("timeupdate", function() {
+if (audio1.currentTime > ii+1) {
+audio1.pause();
+}}, false);
+} 
+
+
+function markLines() { 
+   
+var stringID = "conv" + ii; 
+var inputElement =  document.getElementById(stringID);
+var innerHTML = inputElement.innerHTML;
+var str = innerHTML; 
+if (lastinnerHTML!=""){
+document.getElementById(lastStringID).innerHTML = lastinnerHTML;  }
+if (str[0]!='<')
+{
+lastinnerHTML=str;
+}
+var innerHTML1 = "<mark>" + str + "</mark>" ;
+document.getElementById(stringID).innerHTML = innerHTML1;  
+lastStringID=stringID;
+};
+function sleep(milliseconds) {var start = new Date().getTime(); for (var i = 0; i < 1e7; i++){if ((new Date().getTime() - start) > milliseconds){break;}}}
+
+
+</script>
+
+  
